@@ -12,18 +12,18 @@ public class FrameWorkInit {
 
     WebDriver driver = null;
 
-    public void browserInit(BrowserNames names) {
+    public void browserInit(String names) {
 
         switch (names) {
-            case Chrome:
+            case "Chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
-            case FireFox:
+            case "FireFox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
-            case Ie:
+            case "Ie":
                 WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver();
                 break;
