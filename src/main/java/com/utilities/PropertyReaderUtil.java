@@ -11,6 +11,10 @@ public final class PropertyReaderUtil {
     private PropertyReaderUtil() {
 
     }
+    
+     public String getStoreName(String storeID) {
+        return storeID;
+    }
 
 
     public static String getPropertryValue(String key) {
