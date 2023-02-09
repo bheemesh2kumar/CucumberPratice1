@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.test.runners.SmokeRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.157 s - in com.test.runners.SmokeRunner
