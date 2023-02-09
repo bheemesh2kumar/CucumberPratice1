@@ -1,16 +1,11 @@
 package com.test.steps;
 
-import base.BrowserContext;
 import base.DriverContext;
 import base.FrameWorkInit;
 import com.utilities.PropertyReaderUtil;
-import enums.BrowserNames;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.Map;
 
 public class ApplicationSteps {
 
@@ -18,7 +13,7 @@ public class ApplicationSteps {
     public void user_is_already_on_facebook_login_page() {
 
         FrameWorkInit frameWorkInit = new FrameWorkInit();
-        frameWorkInit.browserInit(PropertyReaderUtil.getPropertryValue("browser.name"));
+        frameWorkInit.browserInit(PropertyReaderUtil.getConfigValuesFromMap("browser.name"));
         DriverContext.getBrowserContext().launchUrl("https://www.facebook.com/");
         DriverContext.getBrowserContext().maxiMizeBrowser();
 
