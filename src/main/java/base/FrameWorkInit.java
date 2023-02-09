@@ -31,6 +31,7 @@ public class FrameWorkInit {
         }
 
         DriverContext.setBrowserContext(new BrowserContext(driver));
+        DriverContext.setDriver(driver);
     }
 
 

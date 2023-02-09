@@ -1,11 +1,15 @@
-Feature: testing facebook login page
+Feature: testing sign up Page
 
-  Background:
+  Scenario: Checks user if enters FirstName and lastname in sign UP window
     Given user is already on FacebookLogin Page
-    When facebook login  title page is "testingpage"
+    When facebook login  title page is "test"
+    And user clicks on CreateNewAccountButton
+    Then user checks if enters Firstname and LastName "Bheemesh" and "Manukonda"
 
 
-  Scenario: testing if user is able to see facebook Logo on LOginPage
-    Then user checks Facebook logo on login Page
+
+
+
+
 
 
