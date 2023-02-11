@@ -1,10 +1,22 @@
 Feature: testing sign up Page
 
-  Scenario: Checks user if enters FirstName and lastname in sign UP window
-    Given user is already on FacebookLogin Page
-    When facebook login  title page is "test"
-    And user clicks on CreateNewAccountButton
-    Then user checks if enters Firstname and LastName "Bheemesh" and "Manukonda"
+  Background:
+    Given user is already on Facebook login page
+    And facebook login page has facebook lable as "Facebook"
+
+  Scenario: Checks the user if enters details signup page
+    Then check if user is able to enter details on signup page
+
+
+  Scenario: Check if DateofBirthNumbers are sorting order
+    And check if user is able to enter details on signup page
+    Then  check if dob details are sorted in order
+
+
+
+
+
+
 
 
 
