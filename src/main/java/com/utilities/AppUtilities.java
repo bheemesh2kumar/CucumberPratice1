@@ -2,6 +2,7 @@ package com.utilities;
 
 import base.DriverContext;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
 
 public class AppUtilities {
 
