@@ -1,6 +1,5 @@
 package base;
 
-import enums.BrowserNames;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,6 +31,7 @@ public class FrameWorkInit {
         }
 
         DriverContext.setBrowserContext(new BrowserContext(driver));
+        DriverContext.setDriver(driver);
     }
 
 
