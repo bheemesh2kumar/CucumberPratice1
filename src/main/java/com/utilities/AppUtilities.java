@@ -15,6 +15,10 @@ public class AppUtilities {
      public void moveToFrame(WebElement ele) {
         DriverContext.getDriver().switchTo().frame(ele);
     }
+    
+     public void moveTodefaultContent(WebElement ele) {
+        DriverContext.getDriver().switchTo().defaultContent();
+    }
 
 
 }
