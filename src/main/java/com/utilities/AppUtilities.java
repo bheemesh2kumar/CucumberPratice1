@@ -12,16 +12,16 @@ public class AppUtilities {
         DriverContext.getDriver().switchTo().alert();
 
     }
-    
-     public void moveToFrame(WebElement ele) {
+
+    public void moveToFrame(WebElement ele) {
         DriverContext.getDriver().switchTo().frame(ele);
     }
-    
-     public void moveTodefaultContent(WebElement ele) {
+
+    public void moveTodefaultContent(WebElement ele) {
         DriverContext.getDriver().switchTo().defaultContent();
     }
-    
-     public void moveToWindowID(String windowID) {
+
+    public void moveToWindowID(String windowID) {
         DriverContext.getDriver().switchTo().window(windowID);
     }
 
