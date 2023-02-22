@@ -24,6 +24,10 @@ public class AppUtilities {
     public void moveToWindowID(String windowID) {
         DriverContext.getDriver().switchTo().window(windowID);
     }
+    
+    public void moveToActiveElment() {
+        DriverContext.getDriver().switchTo().activeElement();
+    }
 
 
 }
