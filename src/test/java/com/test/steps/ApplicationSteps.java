@@ -1,12 +1,14 @@
 package com.test.steps;
 
 import Pages.FBLogInPage;
+import Pages.GoogleSearchPage;
 import base.DriverContext;
 import base.FrameWorkInit;
 import base.Page;
 import com.utilities.AppUtilities;
 import com.utilities.Emp;
 import com.utilities.PropertyReaderUtil;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -18,19 +20,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.Map;
 
 public class ApplicationSteps {
 
     FrameWorkInit frameWorkInit = new FrameWorkInit();
     Page page = null;
     FBLogInPage fbLogInPage = null;
+    GoogleSearchPage googleSearchPage = null;
 
     @Before
     public void browserSetUP() {
         frameWorkInit.browserInit(PropertyReaderUtil.getConfigValuesFromMap("browser.name"));
         page = new Page(DriverContext.getDriver(),
                 new WebDriverWait(DriverContext.getDriver(), Duration.ofSeconds(10)));
-        DriverContext.getBrowserContext().launchUrl("https://www.facebook.com/");
+        DriverContext.getBrowserContext().launchUrl("https://www.google.com/");
         DriverContext.getBrowserContext().maxiMizeBrowser();
 
     }
@@ -74,6 +79,61 @@ public class ApplicationSteps {
 
         Boolean flag = fbLogInPage.isDropDownValuesareSorting(fbLogInPage.dropDownDobselector);
         Assert.assertTrue(flag, "dop elemment are not sorted");
+
+
+    }
+
+    @Given("user is already on PetDiseseAlerts page")
+    public void userIsAlreadyOnPetDiseseAlertsPage() {
+
+    }
+
+    @Then("user gets all state details")
+    public void userGetsAllStateDetails() {
+    }
+
+    @And("user enters below registartion details")
+    public void userEntersBelowRegistartionDetails(DataTable dataTable) {
+
+        Map<String, String> map = dataTable.asMap(String.class, String.class);
+
+        System.out.println("map firstName is " + map.get("FirstName"));
+        System.out.println("map SurName value is " + map.get("SurName"));
+
+    }
+
+    @Given("user is already on Google search Page")
+    public void userIsAlreadyOnGoogleSearchPage() {
+
+        String pageTitle = DriverContext.getDriver().getTitle();
+        System.out.println("hey i am here in this page " + pageTitle);
+
+
+    }
+
+    @And("user enters {string} in google search box")
+    public void userEntersInGoogleSearchBox(String inputValue) {
+
+        googleSearchPage = page.getInstance(GoogleSearchPage.class);
+        googleSearchPage.enterValueinGooglesarch(inputValue);
+
+    }
+
+    @Then("user checks below items is present in dropdown suggestions")
+    public void userChecksBelowItemsIsPresentInDropdownSuggestions(DataTable dataTable) {
+
+        List<String> values = dataTable.asList();
+
+        // values.forEach(i -> googleSearchPage.IsAutoSugValuepPresentinDropDown(i));
+
+        for (String str : values) {
+
+            Boolean flag = googleSearchPage.IsAutoSugValuepPresentinDropDown(str);
+
+            Assert.assertTrue(flag, str + " " + "is populated in dropdownValue");
+
+
+        }
 
 
     }

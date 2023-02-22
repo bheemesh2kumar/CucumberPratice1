@@ -57,4 +57,11 @@ public class Basepage extends Page {
     }
 
 
+    public List<WebElement> getLIstofItemsfindElements(By locator) {
+
+        return driver.findElements(locator);
+
+    }
+
+
 }
