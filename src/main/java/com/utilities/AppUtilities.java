@@ -20,6 +20,10 @@ public class AppUtilities {
      public void moveTodefaultContent(WebElement ele) {
         DriverContext.getDriver().switchTo().defaultContent();
     }
+    
+     public void moveToWindowID(String windowID) {
+        DriverContext.getDriver().switchTo().window(windowID);
+    }
 
 
 }
