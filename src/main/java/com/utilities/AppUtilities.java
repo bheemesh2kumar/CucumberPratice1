@@ -11,6 +11,10 @@ public class AppUtilities {
         DriverContext.getDriver().switchTo().alert();
 
     }
+    
+     public void moveToFrame(WebElement ele) {
+        DriverContext.getDriver().switchTo().frame(ele);
+    }
 
 
 }
