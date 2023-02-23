@@ -32,6 +32,10 @@ public class AppUtilities {
      public void moveToActiveTab() {
         DriverContext.getDriver().switchTo().newWindow(WindowType.TAB);
     }
+    
+     public String getpageSource() {
+        return DriverContext.getDriver().getPageSource();
+    }
 
 
 }
