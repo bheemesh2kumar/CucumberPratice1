@@ -2,6 +2,7 @@ package com.utilities;
 
 import base.DriverContext;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 
@@ -33,8 +34,21 @@ public class AppUtilities {
     public void moveToActiveTab() {
         DriverContext.getDriver().switchTo().newWindow(WindowType.TAB);
     }
-    
-     public String getpageSource() {
+
+    public void addAllCookieswithInformation(Cookie cookie) {
+        DriverContext.getDriver().manage().addCookie(cookie);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i++);
+        }
+
+
+    }
+
+    public String getpageSource() {
         return DriverContext.getDriver().getPageSource();
     }
 
