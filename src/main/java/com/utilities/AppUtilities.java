@@ -45,6 +45,24 @@ public class AppUtilities {
     public void deleteAllCookies(WebElement ele) {
         DriverContext.getDriver().manage().deleteAllCookies();
     }
+    
+    public void addAllCookies(Cookie cookie) {
+        DriverContext.getDriver().manage().addCookie(cookie);
+        for(int i=0;i<10;i++)
+        {
+            System.out.println(i);
+        }
+
+        for(int i=0;i<10;i++)
+        {
+            System.out.println(i++);
+        }
+        
+        
+        
+        
+        
+    }
 
 
 }
