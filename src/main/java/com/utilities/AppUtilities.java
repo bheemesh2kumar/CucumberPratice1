@@ -28,6 +28,10 @@ public class AppUtilities {
     public void moveToActiveElment() {
         DriverContext.getDriver().switchTo().activeElement();
     }
+    
+     public void moveToActiveTab() {
+        DriverContext.getDriver().switchTo().newWindow(WindowType.TAB);
+    }
 
 
 }
