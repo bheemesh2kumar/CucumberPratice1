@@ -3,6 +3,7 @@ package com.utilities;
 import base.DriverContext;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 
 public class AppUtilities {
 
@@ -28,9 +29,17 @@ public class AppUtilities {
     public void moveToActiveElment() {
         DriverContext.getDriver().switchTo().activeElement();
     }
-    
-     public void moveToActiveTab() {
+
+    public void moveToActiveTab() {
         DriverContext.getDriver().switchTo().newWindow(WindowType.TAB);
+    }
+
+    public void moveToFrameBasedonIndex(int index) {
+        DriverContext.getDriver().switchTo().frame(index);
+    }
+
+    public void deleteAllCookies(WebElement ele) {
+        DriverContext.getDriver().manage().deleteAllCookies();
     }
 
 
